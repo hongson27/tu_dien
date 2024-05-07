@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="input">Nhap tu</label>
+<input type="text" id="input"/>
+<button onclick="transcript()" >Dich</button>
+<p id = 'screen'></p>
+<script>
+function transcript() {
+    let arr_eng = ["banana", "apple", "orange", "pen", "pencil", "book"];
+    let arr_vie = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
+    let input = document.getElementById("input").value;
+    for (let engWord of arr_eng) {
+        if (engWord === input) {
+            document.getElementById("screen").innerHTML = arr_vie[arr_eng.indexOf(engWord)];
+            break;
+        } else {
+            document.getElementById("screen").innerHTML = "Khong co tu nay trong tu dien";
+        }
+    }
+}
+</script>
+</body>
+</html>
